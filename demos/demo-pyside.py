@@ -41,7 +41,7 @@ class ImageRectangleWindow(QMainWindow):
 
         # Build the image path from this file's folder, not the terminal's
         # current folder. That makes the path more reliable.
-        image_path = Path(__file__).with_name("image.jpg")
+        image_path = Path("./image.jpg")
         pixmap = QPixmap(str(image_path))
 
         if pixmap.isNull():

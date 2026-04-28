@@ -41,9 +41,18 @@ while True:
                 cv2.FONT_HERSHEY_SIMPLEX,
                 1, (0, 255, 0), 2)
     
-    
+    # Display number of faces detected.
+    cv2.putText(frame, f"Faces: {len(faces)}",
+            (20, 80),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            1, (255, 255, 0), 2)
 
     cv2.imshow("Face Detection", frame)
+
+    # # Unlock once a face is detected
+    # if len(faces) > 0:
+    #     print("Unlocking app...")
+    #     break
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
